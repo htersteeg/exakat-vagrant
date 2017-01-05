@@ -104,7 +104,7 @@
   shell: cd /opt/source/php-src; git clean -f;
 
 - name: checkout PHP 7.0
-  git: repo=https://github.com/php/php-src.git dest=/opt/source/php-src version=PHP-7.0.14 clone=no force=yes
+  git: repo=https://github.com/php/php-src.git dest=/opt/source/php-src version=PHP-7.0.13 clone=no force=yes
   tags:
     - php
 
@@ -129,7 +129,7 @@
   shell: cd /opt/source/php-src; git clean -f;
 
 - name: checkout PHP 5.6
-  git: repo=https://github.com/php/php-src.git dest=/opt/source/php-src version=PHP-5.6.29 clone=no force=yes
+  git: repo=https://github.com/php/php-src.git dest=/opt/source/php-src version=PHP-5.6.28 clone=no force=yes
   tags:
     - php
 

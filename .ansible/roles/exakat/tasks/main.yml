@@ -28,9 +28,12 @@
   shell: php /home/vagrant/exakat.phar doctor
   tags:
     - exakat
-
+- name: default php exakat-PHP 7.0 (aka master)
+  lineinfile: dest=/home/vagrant/config/exakat.ini regexp="php          = "= line="php          = /usr/local/bin/php70"
+  tags:
+    - exakat
 - name: test exakat-PHP 7.2-dev (aka master)
-  lineinfile: dest=/home/vagrant/config/exakat.ini regexp="php          = "= line="php          = /usr/local/bin/php72"
+  lineinfile: dest=/home/vagrant/config/exakat.ini regexp=";php72        = /path/to/php72"= line="php72          = /usr/local/bin/php72"
   tags:
     - exakat
 
@@ -54,10 +57,7 @@
   tags:
     - exakat
 
-- name: test exakat-PHP 5.6
-  lineinfile: dest=/home/vagrant/config/exakat.ini regexp=";php54        = /path/to/php56"= line="php54        = /usr/local/bin/php54"
-  tags:
-    - exakat
 
 
-## Still needs to modify the config/config.ini file
+
+

@@ -40,7 +40,10 @@
   lineinfile: dest=/home/vagrant/neo4j/conf/neo4j-server.properties regexp="^#org.neo4j.server.thirdparty_jaxrs_classes=org.neo4j.examples.server.unmanaged=/examples/unmanaged" insertafter="^#org.neo4j.server.thirdparty_jaxrs_classes=org.neo4j.examples.server.unmanaged=/examples/unmanaged" line="org.neo4j.server.thirdparty_jaxrs_classes=com.thinkaurelius.neo4j.plugins=/tp\n"
   tags:
     - neo4j
-
+- name: Enable Logging (doesnt work without for some reason)
+  lineinfile: dest=/home/vagrant/neo4j/conf/neo4j-server.properties regexp="org.neo4j.server.http.log.enabled=false" line="org.neo4j.server.http.log.enabled=true"
+  tags:
+    - neo4j
 - name: Remove authentication for neo4j 2.3*
   lineinfile: dest=/home/vagrant/neo4j/conf/neo4j-server.properties regexp="dbms.security.auth_enabled=true" line="dbms.security.auth_enabled=false"
   tags:
